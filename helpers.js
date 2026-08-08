@@ -1,0 +1,13 @@
+const $=(s,p=document)=>p.querySelector(s); const $$=(s,p=document)=>[...p.querySelectorAll(s)];
+const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,7);
+const today=()=>new Date().toISOString().slice(0,10);
+const money=n=>new Intl.NumberFormat("ja-JP",{style:"currency",currency:"JPY",maximumFractionDigits:0}).format(Number(n)||0);
+const dateFmt=d=>d?new Intl.DateTimeFormat("en-GB",{day:"2-digit",month:"short",year:"numeric"}).format(new Date(d+"T00:00:00")):"—";
+const monthKey=d=>d.slice(0,7);
+const esc=s=>String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));
+const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
+const pct=(a,b)=>b?clamp((a/b)*100,0,100):0;
+const sum=(arr,key)=>arr.reduce((t,x)=>t+(Number(key?x[key]:x)||0),0);
+const fmtHours=h=>`${Math.floor(h)}h ${Math.round((h%1)*60)}m`;
+const monthName=d=>new Intl.DateTimeFormat("en-US",{month:"long",year:"numeric"}).format(new Date(d+"-01T00:00:00"));
+const csvEscape=s=>`"${String(s??"").replace(/"/g,'""')}"`;
