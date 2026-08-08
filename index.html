@@ -6,20 +6,20 @@
     <title>Finance Manager</title>
     
     <!-- PWA & Favicon Icons -->
-    <link rel="manifest" href="./manifest.json">
-    <link rel="icon" type="image/svg+xml" href="./assets/icons/icon.svg">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/svg+xml" href="assets/icons/icon.svg">
     
-    <!-- CSS Stylesheets (Relative paths fixed for GitHub Pages) -->
-    <link rel="stylesheet" href="./css/variables.css">
-    <link rel="stylesheet" href="./css/layout.css">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/cards.css">
-    <link rel="stylesheet" href="./css/dashboard.css">
-    <link rel="stylesheet" href="./css/forms.css">
-    <link rel="stylesheet" href="./css/tables.css">
-    <link rel="stylesheet" href="./css/calendar.css">
-    <link rel="stylesheet" href="./css/animations.css">
-    <link rel="stylesheet" href="./css/responsive.css">
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cards.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/tables.css">
+    <link rel="stylesheet" href="css/calendar.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
 
@@ -73,33 +73,30 @@
             <button class="pill-btn">More</button>
         </div>
 
-        <!-- Dashboard Views & Containers -->
-        <div id="app-view">
-            <!-- Dynamic UI elements will render here -->
-        </div>
+        <!-- Dashboard Views Container -->
+        <div id="app-view"></div>
     </main>
 
-    <!-- JavaScript Files (Loaded in correct dependency order) -->
-    <script src="./js/storage.js"></script>
-    <script src="./js/helpers.js"></script>
-    <script src="./js/ui.js"></script>
-    <script src="./js/dashboard.js"></script>
-    <script src="./js/salary.js"></script>
-    <script src="./js/expenses.js"></script>
-    <script src="./js/savings.js"></script>
-    <script src="./js/loans.js"></script>
-    <script src="./js/goals.js"></script>
-    <script src="./js/transactions.js"></script>
-    <script src="./js/reports.js"></script>
-    <script src="./js/calendar.js"></script>
-    <script src="./js/settings.js"></script>
-    <script src="./js/app.js"></script>
+    <!-- JavaScript Files -->
+    <script src="js/storage.js"></script>
+    <script src="js/helpers.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/salary.js"></script>
+    <script src="js/expenses.js"></script>
+    <script src="js/savings.js"></script>
+    <script src="js/loans.js"></script>
+    <script src="js/goals.js"></script>
+    <script src="js/transactions.js"></script>
+    <script src="js/reports.js"></script>
+    <script src="js/calendar.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/app.js"></script>
 
-    <!-- Service Worker Registration for PWA support -->
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('./service-worker.js')
+                navigator.serviceWorker.register('service-worker.js')
                     .then(reg => console.log('Service Worker registered successfully'))
                     .catch(err => console.error('Service Worker registration failed:', err));
             });
